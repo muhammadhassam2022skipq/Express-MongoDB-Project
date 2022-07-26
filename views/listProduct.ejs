@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <%- include ("includes/header.ejs") %>
+<%- include ("includes/header.ejs") %>
   </head>
+
   <body>
     <%- include ("includes/navbar.ejs") %>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Product</th>
-          <th scope="col">Price</th>
-          <th scope="col">Image</th>
-        </tr>
-      </thead>
-      <tbody>
-       <% for (let product of products) { %>
-        <tr>
-          <td><%= product._id %></td>
-          <td><%= product.name %></td>
-          <td><%= product.price %></td>
-          <td><%= product.image %></td>
-        </tr>
-      <% } %>
-      </tbody>
-    </table>
-    <a class="btn btn-primary" href="/listproducts/update" role="button">Update</a>
-    <a class="btn btn-primary" href="/listproducts/delete" role="button">Delete</a>
-
-    <%- include ("includes/end.ejs") %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let product of products) { %>
+            <tr>
+              <td>
+                <%= product._id %>
+              </td>
+              <td>
+                <%= product.name %>
+              </td>
+              <td>
+                <%= product.price %>
+              </td>
+              <td>
+                <%= product.image %>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <a class="btn btn-success btn-lg mb-3" href="/listproducts/update" role="button">Update</a>
+      <a class="btn btn-danger btn-lg mb-3" href="/listproducts/delete" role="button">Delete</a>
+      <%- include ("includes/footer.ejs") %>
+      <%- include ("includes/end.ejs") %>
