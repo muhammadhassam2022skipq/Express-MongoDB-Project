@@ -2,7 +2,11 @@ const mongoose = require ("mongoose");
 const productSchema = mongoose.Schema;
 
 let smartphone = new productSchema({
-    name: {
+  _id: {
+    type: productSchema.Types.ObjectId,
+    required: false
+},
+  name: {
       type: String,
       required: true
     },

@@ -3,8 +3,29 @@
   <%- include ("includes/header.ejs") %>
   </head>
   <body>
-    <%- include ("includes/navbar.ejs") %>  
-<h1>The name of product is <%= Name %> with Price <%= Price %></h1>
+    <%- include ("includes/navbar.ejs") %>
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Product</th>
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% for (let product of products) { %>
+        <tr>
+          <td><%= product._id %></td>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= product.image %></td>
+        </tr>
+      <% } %>
+      </tbody>
+    </table>
+    <a class="btn btn-primary" href="/listproducts/update" role="button">Update</a>
+    <a class="btn btn-primary" href="/listproducts/delete" role="button">Delete</a>
 
     <%- include ("includes/end.ejs") %>
