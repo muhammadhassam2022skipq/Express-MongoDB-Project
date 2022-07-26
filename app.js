@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //comments 
 app.set ("views", "views");
 app.set("view engine", "ejs");
-
+app.use(express.static(__dirname+"/public"));
 
 //loading error page
 app.get ("/error", (req,res)=> {
@@ -31,8 +31,11 @@ app.use (updateProductRoute);
 app.use (deleteProductRoute)
 
 
+
+// mongodb://cmdlhrltx03:27017/hassamDB
+
 // Connecting with mongoDB server and then Listening to the port
-mongoose.connect('mongodb://cmdlhrltx03:27017/hassamDB').then(()=> {
+mongoose.connect('mongodb://localhost:27017/hassamDB').then(()=> {
     app.listen (4000, ()=> {
         console.log ("Listening on port 4000");
     })
