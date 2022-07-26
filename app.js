@@ -1,3 +1,4 @@
+// importing all the neccasery modules
 const express = require("express");
 const bodyParser= require ("body-parser");
 const app= express();
@@ -16,7 +17,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set ("views", "views");
 app.set("view engine", "ejs");
 
-//routing
+
+//loading error page
+app.get ("/error", (req,res)=> {
+  res.render ("error")
+})
+
+//routing of all the pages
 app.use(homeRoute);
 app.use(addProductRoute);
 app.use(listProductRoute);
