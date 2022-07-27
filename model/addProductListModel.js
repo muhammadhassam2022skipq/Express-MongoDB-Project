@@ -14,9 +14,9 @@ let smartphone = new productSchema({
       type: Number,
       required: true
     },
-    image: {
+    category: {
       type: String,
-      required: false
+      required: true
     }
   });
   module.exports= mongoose.model("myProduct", smartphone);

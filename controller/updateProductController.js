@@ -3,7 +3,7 @@ const productModel = require("../model/addProductListModel");
 const mongoose = require ("mongoose");
 exports.getUpdate=((req,res)=> {
     res.render("update", {
-
+        pageTitle: "Product Update"
     })
 });
 

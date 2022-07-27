@@ -2,7 +2,9 @@
 const productModel = require("../model/addProductListModel");
 const mongoose = require ("mongoose");
 exports.get=((req,res)=> {
-    res.render("delete")
+    res.render("delete", {
+        pageTitle: "Delete Products"
+    })
 });
 exports.postDelete = ((req,res)=> {
     const deleteInDB = async ()=>{

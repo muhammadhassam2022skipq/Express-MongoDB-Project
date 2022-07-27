@@ -1,44 +1,49 @@
 // importing all the neccasery modules
 const express = require("express");
-const bodyParser= require ("body-parser");
-const app= express();
+const bodyParser = require("body-parser");
+const app = express(); // Express app initializing
 const mongoose = require("mongoose");
-const homeRoute= require("./routes/homeRoute");
-const addProductRoute= require("./routes/addProductRoute");
-const listProductRoute= require("./routes/listProductRoute");
-const updateProductRoute= require("./routes/upadateRoute");
-const deleteProductRoute= require("./routes/deleteRoute");
+const homeRoute = require("./routes/homeRoute");
+const addProductRoute = require("./routes/addProductRoute");
+const listProductRoute = require("./routes/listProductRoute");
+const updateProductRoute = require("./routes/upadateRoute");
+const deleteProductRoute = require("./routes/deleteRoute");
 
 
-// comments
+// To
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//comments 
-app.set ("views", "views");
+//Template engine ejs in views 
+app.set("views", "views");
 app.set("view engine", "ejs");
-app.use(express.static(__dirname+"/public"));
 
-//loading error page
-app.get ("/error", (req,res)=> {
-  res.render ("error")
-})
+//giving the location of static files
+app.use(express.static(__dirname + "/public"));
+
+// loading error page
+
 
 //routing of all the pages
 app.use(homeRoute);
 app.use(addProductRoute);
 app.use(listProductRoute);
-app.use (updateProductRoute);
-app.use (deleteProductRoute)
+app.use(updateProductRoute);
+app.use(deleteProductRoute)
+
+app.use((req, res,next) => {
+    res.render("error", {
+        pageTitle: "Error Page Not Found",
+        next
+    })
+});
 
 
-
-// mongodb://cmdlhrltx03:27017/hassamDB
 
 // Connecting with mongoDB server and then Listening to the port
-mongoose.connect('mongodb://localhost:27017/hassamDB').then(()=> {
-    app.listen (4000, ()=> {
-        console.log ("Listening on port 4000");
+mongoose.connect('mongodb://cmdlhrltx03:27017/hassamDB').then(() => {
+    app.listen(4000, () => {
+        console.log("Listening on port 4000");
     })
-}).catch ((err)=> {
-    console.log ("The error is: "+err);
+}).catch((err) => {
+    console.log("The error is: " + err);
 });

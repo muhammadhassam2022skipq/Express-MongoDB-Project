@@ -4,14 +4,14 @@
   </head>
 
   <body>
-    <%- include ("includes/navbar.ejs") %>  
+    <%- include ("includes/navbar.ejs") %>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Product</th>
             <th scope="col">Price</th>
-            <th scope="col">Image</th>
+            <th scope="col">Category</th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                 <%= product.price %>
               </td>
               <td>
-                <%= product.image %>
+                <%= product.category %>
               </td>
             </tr>
             <% } %>
@@ -35,5 +35,6 @@
       </table>
       <a class="btn btn-success btn-lg mb-3" href="/listproducts/update" role="button">Update</a>
       <a class="btn btn-danger btn-lg mb-3" href="/listproducts/delete" role="button">Delete</a>
+      <a class="btn btn-success btn-lg mb-3" href="/addproducts" role="button">Add Another Product</a>
       <%- include ("includes/footer.ejs") %>
-      <%- include ("includes/end.ejs") %>
+        <%- include ("includes/end.ejs") %>

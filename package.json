@@ -4,5 +4,27 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.4.6"
-  }
+  },
+  "name": "express-mongodb-project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadhassam2022skipq/Express-MongoDB-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadhassam2022skipq/Express-MongoDB-Project/issues"
+  },
+  "homepage": "https://github.com/muhammadhassam2022skipq/Express-MongoDB-Project#readme",
+  "description": ""
 }
