@@ -16,7 +16,7 @@ const accountRoute = require ("./routes/accountRoute");
 
 
 const store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/store-sessions',
+    uri: 'mongodb://cmdlhrltx03:27017/store-sessions',
     collection: 'sessions'
   });
 
@@ -58,9 +58,9 @@ app.use((req, res,next) => {
 });
 
 
-//mongodb://cmdlhrltx03:27017/hassamDB
+// mongodb://cmdlhrltx03:27017/hassamDB
 // Connecting with mongoDB server and then Listening to the port
-mongoose.connect('mongodb://localhost:27017/hassamDB').then(() => {
+mongoose.connect('mongodb://cmdlhrltx03:27017/hassamDB').then(() => {
     app.listen(4000, () => {
         console.log("Listening on port 4000");
     })
